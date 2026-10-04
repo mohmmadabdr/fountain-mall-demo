@@ -16,16 +16,19 @@
   --radius:18px; --shadow:0 10px 30px rgba(11,59,79,.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:clip;max-width:100%}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.wrap>*,[class*="-grid"]>*{min-width:0}
 h1,h2,h3{font-family:"Cairo",sans-serif;font-weight:800;line-height:1.4;letter-spacing:0}
 .eyebrow{display:inline-block;color:var(--sea-3);font-weight:600;font-size:.9rem;letter-spacing:.5px;margin-bottom:8px}
-.eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:var(--sand);vertical-align:middle;margin-left:10px}
+.eyebrow::before,.eyebrow::after{content:"";display:inline-block;width:26px;height:2px;background:var(--sand);vertical-align:middle;margin:0 10px}
+.about .eyebrow::after{display:none}
+.about .eyebrow::before{margin-right:0}
 section{padding:90px 0}
-.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head{max-width:680px;margin:0 auto 44px;text-align:center}
 .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--sea)}
 .sec-head p{color:var(--muted);margin-top:10px}
 
@@ -80,7 +83,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(0,0,0,.04)}
 .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
 .about-img{position:relative}
 .about-img img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
-.about-badge{position:absolute;bottom:-24px;left:-14px;background:var(--sand);color:var(--sea);padding:18px 22px;border-radius:16px;box-shadow:var(--shadow);font-weight:700;max-width:220px;line-height:1.5}
+.about-badge{position:absolute;bottom:-24px;left:16px;background:var(--sand);color:var(--sea);padding:18px 22px;border-radius:16px;box-shadow:var(--shadow);font-weight:700;max-width:220px;line-height:1.5}
 .about-badge small{display:block;font-weight:500;font-size:.85rem}
 .about p{color:var(--muted);margin-bottom:16px}
 .checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
@@ -100,10 +103,10 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(0,0,0,.04)}
 .cat p{color:rgba(255,255,255,.7);font-size:.95rem}
 
 /* directory */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;align-items:center}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;align-items:center;justify-content:center}
 .chip{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:inherit;font-size:.95rem;color:var(--sea);transition:.2s}
 .chip.active,.chip:hover{background:var(--sea);color:#fff;border-color:var(--sea)}
-.search{margin-inline-start:auto;position:relative}
+.search{position:relative}
 .search input{padding:10px 42px 10px 16px;border-radius:999px;border:1px solid var(--line);font-family:inherit;font-size:.95rem;width:240px;background:#fff}
 .search input:focus{outline:2px solid var(--sand);border-color:transparent}
 .search svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:18px;color:var(--muted)}
@@ -234,7 +237,6 @@ footer a:hover{color:var(--sand)}
   .cat-grid,.svc-grid,.f-grid{grid-template-columns:1fr}
   .checks{grid-template-columns:1fr}
   form{grid-template-columns:1fr}
-  .about-badge{left:10px}
 }
 </style>
 </head>
