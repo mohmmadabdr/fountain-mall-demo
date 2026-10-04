@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>النافورة مول | العقبة</title>
+<meta name="description" content="النافورة مول - مجمع النافورة التجاري والترفيهي في العقبة. تسوّق، مطاعم، بنوك، ترفيه للعائلة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#0b3b4f; --sea-2:#0f566f; --sea-3:#1b7a93;
+  --sand:#d9b26f; --sand-2:#f3e6cc; --coral:#e2725b;
+  --ink:#10222b; --muted:#5b6b73; --bg:#fbf8f2; --card:#ffffff; --line:#e9e1d2;
+  --radius:18px; --shadow:0 10px 30px rgba(11,59,79,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:"Reem Kufi",sans-serif;line-height:1.35}
+.eyebrow{display:inline-block;color:var(--sea-3);font-weight:600;font-size:.9rem;letter-spacing:.5px;margin-bottom:8px}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:var(--sand);vertical-align:middle;margin-left:10px}
+section{padding:90px 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--sea)}
+.sec-head p{color:var(--muted);margin-top:10px}
+
+/* demo ribbon */
+.demo{background:var(--sea);color:var(--sand-2);text-align:center;font-size:.82rem;padding:6px 12px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.88);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo img{height:46px;width:auto}
+.menu{display:flex;gap:28px;font-weight:500}
+.menu a{position:relative;padding:4px 0;color:var(--sea)}
+.menu a::after{content:"";position:absolute;bottom:-2px;right:0;width:0;height:2px;background:var(--sand);transition:.3s}
+.menu a:hover::after{width:100%}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;transition:.25s;border:2px solid transparent;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn-primary{background:var(--sea);color:#fff}
+.btn-primary:hover{background:var(--sea-2);transform:translateY(-2px)}
+.btn-sand{background:var(--sand);color:var(--sea)}
+.btn-sand:hover{background:#e6c487;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--sea);margin:7px 8px;border-radius:2px;transition:.3s}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 100px);display:flex;align-items:center;color:#fff;overflow:hidden;padding:0}
+.hero-bg{position:absolute;inset:0;background:url("https://static.wixstatic.com/media/35835d_ab4bbe05eddd492781be30b1be2f256e~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80/hero.jpg") center/cover;transform:scale(1.06);animation:zoom 18s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.14)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(11,59,79,.15) 0%,rgba(11,59,79,.75) 55%,rgba(8,40,54,.92) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:80px 0}
+.hero-content{max-width:620px}
+.hero .tag{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:999px;font-size:.9rem;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--sand)}
+.hero p{font-size:1.12rem;opacity:.92;margin-bottom:30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.wave{position:absolute;bottom:-1px;left:0;right:0;z-index:2;line-height:0}
+.wave svg{width:100%;height:70px}
+
+/* stats */
+.stats{margin-top:-60px;position:relative;z-index:5;padding:0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.stat{padding:30px 20px;text-align:center;border-left:1px solid var(--line)}
+.stat:last-child{border-left:0}
+.stat b{display:block;font-family:"Reem Kufi";font-size:2.2rem;color:var(--sea)}
+.stat span{color:var(--muted);font-size:.95rem}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative}
+.about-img img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about-badge{position:absolute;bottom:-24px;left:-14px;background:var(--sand);color:var(--sea);padding:18px 22px;border-radius:16px;box-shadow:var(--shadow);font-weight:700;max-width:220px;line-height:1.5}
+.about-badge small{display:block;font-weight:500;font-size:.85rem}
+.about p{color:var(--muted);margin-bottom:16px}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.checks li{display:flex;gap:10px;align-items:center;font-weight:500}
+.checks li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--sand-2);color:var(--sea-2);font-size:.8rem;flex:none}
+
+/* categories */
+.cats{background:var(--sea);color:#fff;position:relative;overflow:hidden}
+.cats .sec-head h2{color:#fff}.cats .sec-head p{color:rgba(255,255,255,.7)}
+.cats .eyebrow{color:var(--sand)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:28px;transition:.3s}
+.cat:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.cat .ic{width:54px;height:54px;border-radius:14px;background:var(--sand);color:var(--sea);display:grid;place-items:center;margin-bottom:16px}
+.cat .ic svg{width:28px;height:28px}
+.cat h3{font-size:1.25rem;margin-bottom:6px}
+.cat p{color:rgba(255,255,255,.7);font-size:.95rem}
+
+/* directory */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;align-items:center}
+.chip{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:inherit;font-size:.95rem;color:var(--sea);transition:.2s}
+.chip.active,.chip:hover{background:var(--sea);color:#fff;border-color:var(--sea)}
+.search{margin-inline-start:auto;position:relative}
+.search input{padding:10px 42px 10px 16px;border-radius:999px;border:1px solid var(--line);font-family:inherit;font-size:.95rem;width:240px;background:#fff}
+.search input:focus{outline:2px solid var(--sand);border-color:transparent}
+.search svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:18px;color:var(--muted)}
+.dir-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.store{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s}
+.store:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.store .lg{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:12px;border-bottom:1px solid var(--line)}
+.store .lg img{width:100%;height:100%;object-fit:contain}
+.store .info{padding:14px 16px}
+.store h3{font-family:"IBM Plex Sans Arabic";font-size:1.02rem;font-weight:600}
+.store .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem}
+.pill{background:var(--sand-2);color:var(--sea-2);padding:1px 10px;border-radius:999px;font-size:.78rem}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+.svc .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--sand-2);color:var(--sea-2);display:grid;place-items:center}
+.svc .ic svg{width:22px;height:22px}
+.svc h3{font-family:"IBM Plex Sans Arabic";font-size:1rem;font-weight:600}
+.svc p{font-size:.88rem;color:var(--muted);line-height:1.6}
+
+/* events */
+.events{background:linear-gradient(180deg,var(--sand-2),var(--bg))}
+.ev-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.ev{position:relative;border-radius:var(--radius);overflow:hidden;min-height:300px;color:#fff;display:flex;align-items:flex-end}
+.ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}
+.ev:hover img{transform:scale(1.06)}
+.ev::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,40,54,.88),transparent 60%)}
+.ev .c{position:relative;z-index:2;padding:22px}
+.ev .date{background:var(--coral);padding:2px 12px;border-radius:999px;font-size:.8rem;display:inline-block;margin-bottom:8px}
+.ev h3{font-size:1.3rem}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
+.gal button{border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--line)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gal button:hover img{transform:scale(1.08)}
+.gal .big{grid-column:span 2;grid-row:span 2}
+.lightbox{position:fixed;inset:0;background:rgba(5,20,28,.92);z-index:100;display:none;place-items:center;padding:20px}
+.lightbox.open{display:grid}
+.lightbox img{max-height:86vh;border-radius:12px}
+.lightbox .x{position:absolute;top:18px;left:18px;background:#fff;border:0;width:42px;height:42px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.visit-card{background:#fff;border-radius:var(--radius);padding:32px;border:1px solid var(--line)}
+.hours{list-style:none;margin:16px 0 24px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--line)}
+.hours li b{color:var(--sea)}
+.open-now{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+.open-now.on{background:#dcfce7;color:#166534}.open-now.off{background:#fee2e2;color:#991b1b}
+.contact-list{list-style:none;display:grid;gap:12px}
+.contact-list a,.contact-list div{display:flex;gap:12px;align-items:center}
+.contact-list svg{width:20px;color:var(--sea-3);flex:none}
+.map{border-radius:var(--radius);overflow:hidden;min-height:420px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0}
+
+/* contact form */
+.form-sec{background:var(--sea);color:#fff;border-radius:28px;padding:50px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+.form-sec h2{font-size:2rem}
+.form-sec p{opacity:.8}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form input,form textarea,form select{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:1rem}
+form select option{color:var(--ink)}
+form ::placeholder{color:rgba(255,255,255,.6)}
+form textarea{grid-column:1/-1;min-height:110px;resize:vertical}
+form .full{grid-column:1/-1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:14px 24px;border-radius:12px;z-index:200;transition:.4s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* footer */
+footer{background:#071f2a;color:rgba(255,255,255,.75);padding:60px 0 24px;margin-top:90px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px}
+footer h4{color:#fff;font-family:"Reem Kufi";margin-bottom:14px;font-size:1.1rem}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:var(--sand)}
+.f-logo{height:60px;width:auto;filter:brightness(0) invert(1);margin-bottom:14px}
+.social{display:flex;gap:10px;margin-top:16px}
+.social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.25s}
+.social a:hover{background:var(--sand);color:var(--sea)}
+.social svg{width:18px}
+.copy{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.fab{position:fixed;bottom:22px;left:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+.fab svg{width:30px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .dir-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .menu{position:fixed;top:100px;right:0;left:0;background:var(--bg);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:.35s;z-index:-1}
+  .menu.open{transform:none}
+  .burger{display:block}
+  .nav-cta .btn{display:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-left:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .about-grid,.visit-grid,.form-sec{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .ev-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .search{margin-inline-start:0;width:100%}.search input{width:100%}
+  .form-sec{padding:30px 22px}
+  section{padding:64px 0}
+}
+@media (max-width:560px){
+  .dir-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid,.svc-grid,.f-grid{grid-template-columns:1fr}
+  .checks{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  .about-badge{left:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">✦ نسخة تجريبية مقترحة لتحديث موقع النافورة مول ✦</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo"><img src="https://static.wixstatic.com/media/35835d_531c4a13bc0745eb84c67f40d2eeac12~mv2.png/v1/fill/w_290,h_98,al_c,q_90/logo.png" alt="النافورة مول"></a>
+    <nav class="menu" id="menu">
+      <a href="#about">من نحن</a>
+      <a href="#directory">المتاجر</a>
+      <a href="#services">الخدمات</a>
+      <a href="#events">العروض والفعاليات</a>
+      <a href="#gallery">المعرض</a>
+      <a href="#visit">زورونا</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#visit" class="btn btn-primary">خطط لزيارتك</a>
+      <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="tag"><span class="dot"></span><span id="heroStatus">مفتوح اليوم حتى 1:00 بعد منتصف الليل</span></span>
+      <h1>وجهتك الأولى<br>للتسوّق في <em>العقبة</em></h1>
+      <p>علامات تجارية عالمية، مطاعم ومقاهٍ، بنوك، وترفيه للعائلة — كلها تحت سقف واحد في قلب المدينة الساحلية.</p>
+      <div class="hero-actions">
+        <a href="#directory" class="btn btn-sand">تصفّح المتاجر</a>
+        <a href="#visit" class="btn btn-ghost">الموقع وساعات العمل</a>
+      </div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#fbf8f2" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z"/></svg></div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><b data-count="85">0</b><span>متجر وعلامة تجارية</span></div>
+      <div class="stat"><b data-count="21000">0</b><span>م² مساحة البناء</span></div>
+      <div class="stat"><b data-count="260" data-plus>0</b><span>موقف سيارات</span></div>
+      <div class="stat"><b data-count="15">0</b><span>ساعة عمل يومياً</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-img reveal">
+      <img src="https://static.wixstatic.com/media/35835d_51d241e59be14bcdbdff66f39d658178~mv2.jpg/v1/fill/w_1100,h_825,al_c,q_80/about.jpg" alt="مبنى النافورة مول">
+      <div class="about-badge">مبنى أخضر<small>بمشروع طاقة متجددة خاص به</small></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">من نحن</span>
+      <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--sea);margin-bottom:16px">الأول من نوعه في العقبة</h2>
+      <p>يعتبر مجمع النافورة التجاري والترفيهي الأول من نوعه في مدينة العقبة، وهو مملوك بالكامل لشركة الأسواق الأولى، التابعة للأسواق الحرة الأردنية.</p>
+      <p>يقع المجمع على أرض مساحتها 13,000 م² بمساحة بناء إجمالية 21,000 م²، منها 9,000 م² مخصصة لمواقف السيارات المغلقة والخارجية، وقد صُمّم بأعلى المواصفات المعمارية والهندسية.</p>
+      <ul class="checks">
+        <li>أسواق حرة</li><li>بنوك ومركز أعمال</li>
+        <li>منطقة ألعاب للأطفال</li><li>مطاعم ومقاهٍ</li>
+        <li>صيدلية ومركز تجميل</li><li>وكالات سياحة وسفر</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">اكتشف</span>
+      <h2>كل ما تحتاجه في مكان واحد</h2>
+      <p>من الأزياء العالمية إلى خدماتك البنكية اليومية.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></div><h3>أزياء وأحذية</h3><p>علامات عالمية ومحلية للرجال والنساء والأطفال.</p></div>
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6v4l2 3v10a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V10l2-3z"/><path d="M9 7h6"/></svg></div><h3>عطور وتجميل</h3><p>أشهر دور العطور ومراكز التجميل والعناية.</p></div>
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V8a7 7 0 0 1 14 0v3M4 11l1 9h14l1-9"/></svg></div><h3>مطاعم ومقاهٍ</h3><p>من الوجبات السريعة إلى المقاهي الهادئة.</p></div>
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 12 4l9 6M5 10v9M19 10v9M9 10v9M15 10v9M3 21h18"/></svg></div><h3>بنوك وخدمات مالية</h3><p>فروع بنوك رئيسية وصرافات آلية.</p></div>
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>ترفيه العائلة</h3><p>مدينة ألعاب للأطفال وصالة بولينغ.</p></div>
+      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H4v4M2 12h20v8H2zM12 8v12M12 8a3 3 0 1 0-3-3c0 2 3 3 3 3zm0 0a3 3 0 1 1 3-3c0 2-3 3-3 3z"/></svg></div><h3>أسواق حرة</h3><p>تسوّق معفى من الرسوم الجمركية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="directory">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">دليل المتاجر</span>
+      <h2>علاماتنا التجارية</h2>
+      <p>ابحث عن متجرك المفضّل أو تصفّح حسب الفئة.</p>
+    </div>
+    <div class="filters" id="filters">
+      <button class="chip active" data-f="all">الكل</button>
+      <button class="chip" data-f="fashion">أزياء</button>
+      <button class="chip" data-f="sport">رياضة</button>
+      <button class="chip" data-f="bank">بنوك</button>
+      <button class="chip" data-f="other">أسواق وخدمات</button>
+      <label class="search"><input id="q" type="search" placeholder="ابحث عن متجر..."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></label>
+    </div>
+    <div class="dir-grid" id="dir"></div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">الخدمات</span>
+      <h2>راحتك أولاً</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></div><div><h3>مواقف واسعة</h3><p>أكثر من 260 موقفاً مغلقاً وخارجياً</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01M2 9a14 14 0 0 1 20 0"/></svg></div><div><h3>واي فاي مجاني</h3><p>اتصال سريع في جميع أرجاء المول</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></div><div><h3>صيدلية</h3><p>لاحتياجاتك الصحية اليومية</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><div><h3>مركز أعمال</h3><p>مساحات وخدمات لرجال الأعمال</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div><h3>سياحة وسفر</h3><p>وكالات لحجز رحلاتك وجولاتك</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M8 21l4-8 4 8M7 10h10"/></svg></div><div><h3>منطقة أطفال</h3><p>ألعاب آمنة وممتعة للصغار</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div><h3>صرافات آلية</h3><p>فروع وصرافات لعدة بنوك</p></div></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2M22 2l-6 6"/></svg></div><div><h3>أمن على مدار الساعة</h3><p>طاقم أمن ومراقبة لراحة الزوّار</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">العروض والفعاليات</span>
+      <h2>دائماً هناك جديد</h2>
+      <p>تابع أحدث العروض والأنشطة في النافورة مول.</p>
+    </div>
+    <div class="ev-grid">
+      <a class="ev reveal" href="https://www.instagram.com/the_fountain_mall/" target="_blank" rel="noopener">
+        <img src="https://static.wixstatic.com/media/35835d_23fb15bdd1674bee8c7fbff2355ca770~mv2.jpeg/v1/fill/w_1200,h_700,al_c,q_80/ev1.jpg" alt="">
+        <div class="c"><span class="date">عرض موسمي</span><h3>تخفيضات نهاية الموسم على أشهر العلامات</h3></div>
+      </a>
+      <a class="ev reveal" href="https://www.instagram.com/the_fountain_mall/" target="_blank" rel="noopener">
+        <img src="https://static.wixstatic.com/media/35835d_179dc6a89f5045caa78d36e4712567ed~mv2.jpg/v1/fill/w_700,h_700,al_c,q_80/ev2.jpg" alt="">
+        <div class="c"><span class="date">عطلة نهاية الأسبوع</span><h3>فعاليات للأطفال</h3></div>
+      </a>
+      <a class="ev reveal" href="https://www.instagram.com/the_fountain_mall/" target="_blank" rel="noopener">
+        <img src="https://static.wixstatic.com/media/35835d_6e525ada963c49eb9c408b6ac02fcf93~mv2.jpg/v1/fill/w_700,h_700,al_c,q_80/ev3.jpg" alt="">
+        <div class="c"><span class="date">جديد</span><h3>افتتاحات قريبة</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">المعرض</span>
+      <h2>استكشف عالم النافورة</h2>
+    </div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">زورونا</span>
+      <h2>خطّط لزيارتك</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <span class="open-now" id="openNow">...</span>
+        <ul class="hours">
+          <li><span>السبت – الخميس</span><b>10:00 ص – 1:00 ص</b></li>
+          <li><span>الجمعة</span><b>2:00 م – 1:00 ص</b></li>
+        </ul>
+        <ul class="contact-list">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>شارع عثمان بن عفان، العقبة، الأردن</div>
+          <a href="tel:+962791819000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span dir="ltr">+962 7 9181 9000</span></a>
+          <a href="tel:+96232420333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg><span dir="ltr">+962 3 242 0333</span></a>
+          <a href="mailto:info@fountainjo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>info@fountainjo.com</a>
+        </ul>
+        <a href="https://www.google.com/maps/search/?api=1&query=The+Fountain+Mall+Aqaba" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px">احصل على الاتجاهات</a>
+      </div>
+      <div class="map reveal">
+        <iframe loading="lazy" src="https://maps.google.com/maps?q=The%20Fountain%20Mall%20Aqaba&z=15&output=embed" title="خريطة النافورة مول"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="form-sec reveal">
+    <div>
+      <span class="eyebrow" style="color:var(--sand)">تواصل معنا</span>
+      <h2>استفسار، اقتراح، أو طلب تأجير؟</h2>
+      <p>أرسل رسالتك وسيتواصل فريقنا معك في أقرب وقت.</p>
+    </div>
+    <form id="cform">
+      <input required name="name" placeholder="الاسم">
+      <input required name="phone" type="tel" placeholder="رقم الهاتف" dir="rtl">
+      <select name="type" class="full">
+        <option>استفسار عام</option><option>طلب تأجير محل</option><option>شكوى أو اقتراح</option><option>إعلان وشراكات</option>
+      </select>
+      <textarea required name="msg" placeholder="رسالتك"></textarea>
+      <button class="btn btn-sand full" type="submit" style="justify-content:center">إرسال الرسالة</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img class="f-logo" src="https://static.wixstatic.com/media/35835d_531c4a13bc0745eb84c67f40d2eeac12~mv2.png/v1/fill/w_290,h_98,al_c,q_90/logo.png" alt="النافورة مول">
+        <p>مجمع النافورة التجاري والترفيهي — وجهة التسوق والترفيه الأولى في العقبة.</p>
+        <div class="social">
+          <a href="https://web.facebook.com/FountainMall" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H8v4h2v8h4v-8h3l1-4h-4V9z"/></svg></a>
+          <a href="https://www.instagram.com/the_fountain_mall/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/962791819000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a15 15 0 0 1-5.8-5.1c-.6-.9-1-2-1-2.9 0-1 .5-1.6.8-1.8.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>روابط</h4><ul><li><a href="#about">من نحن</a></li><li><a href="#directory">المتاجر</a></li><li><a href="#events">العروض</a></li><li><a href="#visit">الموقع</a></li></ul></div>
+      <div><h4>الفئات</h4><ul><li>أزياء</li><li>بنوك</li><li>مطاعم ومقاهٍ</li><li>ترفيه</li></ul></div>
+      <div><h4>ساعات العمل</h4><ul><li>السبت – الخميس<br>10:00 ص – 1:00 ص</li><li>الجمعة<br>2:00 م – 1:00 ص</li></ul></div>
+    </div>
+    <div class="copy"><span>جميع الحقوق محفوظة © <span id="yr"></span> شركة الأسواق الأولى FSC</span><span>نسخة تجريبية</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/962791819000" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a15 15 0 0 1-5.8-5.1c-.6-.9-1-2-1-2.9 0-1 .5-1.6.8-1.8.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+
+<div class="lightbox" id="lb"><button class="x" aria-label="إغلاق">×</button><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== البيانات (بدون قاعدة بيانات — عدّلها هنا مباشرة) ===== */
+const W = (id, ext='png', w=400, h=400) =>
+  `https://static.wixstatic.com/media/35835d_${id}~mv2.${ext}/v1/fill/w_${w},h_${h},al_c,q_85/img.${ext}`;
+
+const STORES = [
+  {name:"Daoud Tycoons", cat:"fashion", label:"أزياء", floor:"الأرضي", logo:W("14b46275622a47148943a85d94cab54b")},
+  {name:"America Today", cat:"fashion", label:"أزياء", floor:"الأرضي", logo:W("0797942560254518b40dadd1397ce454")},
+  {name:"Polo Club",     cat:"fashion", label:"أزياء", floor:"الأول",  logo:W("c0c6b1308de94520ab0f61457745d276")},
+  {name:"Al Qaisar",     cat:"fashion", label:"أزياء", floor:"الأول",  logo:W("48e83dffcee74ef499fda0c23b223e35")},
+  {name:"Mondo",         cat:"sport",   label:"رياضة", floor:"الأول",  logo:W("f5f16bc0d0c9462a9bfe544aa48f2102")},
+  {name:"Astra",         cat:"other",   label:"خدمات", floor:"الأرضي", logo:W("3c912288ea0f4c43bb31f7370d8598d3")},
+  {name:"Qattan",        cat:"other",   label:"عطور",  floor:"الأرضي", logo:W("d02d514621ac49f591f0385ad8d341ec")},
+  {name:"Marhaba",       cat:"other",   label:"خدمات", floor:"الأرضي", logo:W("c79c74b91740485f985716bed6979389")},
+  {name:"Jordan Duty Free", cat:"other",label:"أسواق حرة", floor:"الأرضي", logo:W("290de73c09a441baac58491539d467ed")},
+  {name:"بنك الاتحاد",    cat:"bank",    label:"بنك",   floor:"الأرضي", logo:W("cbda30166d4d4db3b2c411e7d287e7b8")},
+  {name:"بنك القاهرة عمان",cat:"bank",   label:"بنك",   floor:"الأرضي", logo:W("be0901d664d24116bfaffd1676fd18ac")},
+  {name:"The Fountain",  cat:"other",   label:"خدمات", floor:"—",      logo:W("811ddfd6d93c4c1f97e5dd5df269516f")},
+];
+
+const GALLERY = [
+  "26e56a24c97140b59c3043786798c4f0","72d531c9e1004091bbb84170a98e07e0","c279913fdb7a4785b627205e4ba9d466",
+  "afc51d27fad74328bb15349ddb8c514e","c7a9ded11a504714be689642dbd6fe9e","2a3c0352fba84f01a866f96d2db74792",
+  "27d301347f6546abafab755c38df1c66","179dc6a89f5045caa78d36e4712567ed"
+];
+
+/* ===== دليل المتاجر ===== */
+const dir = document.getElementById('dir'), q = document.getElementById('q');
+let filter = 'all';
+function renderStores(){
+  const term = q.value.trim().toLowerCase();
+  const list = STORES.filter(s => (filter==='all'||s.cat===filter) && s.name.toLowerCase().includes(term));
+  dir.innerHTML = list.length ? list.map(s => `
+    <div class="store">
+      <div class="lg"><img loading="lazy" src="${s.logo}" alt="${s.name}"></div>
+      <div class="info"><h3>${s.name}</h3>
+        <div class="meta"><span class="pill">${s.label}</span><span>الطابق ${s.floor}</span></div></div>
+    </div>`).join('') : '<div class="empty">لا توجد نتائج مطابقة</div>';
+}
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  b.classList.add('active'); filter = b.dataset.f; renderStores();
+});
+q.addEventListener('input', renderStores);
+renderStores();
+
+/* ===== المعرض + Lightbox ===== */
+const gal = document.getElementById('gal'), lb = document.getElementById('lb');
+gal.innerHTML = GALLERY.map((id,i)=>`<button class="${i===0||i===5?'big':''}" data-src="${W(id,'jpg',1400,1400)}"><img loading="lazy" src="${W(id,'jpg',700,700)}" alt="صورة من النافورة مول"></button>`).join('');
+gal.addEventListener('click', e=>{const b=e.target.closest('button'); if(!b) return; lb.querySelector('img').src=b.dataset.src; lb.classList.add('open');});
+lb.addEventListener('click', e=>{ if(e.target!==lb.querySelector('img')) lb.classList.remove('open'); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+
+/* ===== مفتوح الآن؟ (توقيت الأردن) ===== */
+function isOpen(){
+  const now = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Amman'}));
+  const d = now.getDay(), m = now.getHours()*60 + now.getMinutes();
+  if (m < 60) return true;                 // بعد منتصف الليل حتى 1:00
+  const start = d===5 ? 14*60 : 10*60;     // الجمعة من 2 ظهراً
+  return m >= start;
+}
+const on = isOpen(), el = document.getElementById('openNow');
+el.className = 'open-now ' + (on?'on':'off');
+el.textContent = on ? '● مفتوح الآن' : '● مغلق الآن';
+document.getElementById('heroStatus').textContent = on ? 'مفتوح الآن حتى 1:00 بعد منتصف الليل' : 'نفتح اليوم الساعة ' + (new Date().getDay()===5?'2:00 م':'10:00 ص');
+
+/* ===== نموذج التواصل -> واتساب (بدون سيرفر) ===== */
+document.getElementById('cform').addEventListener('submit', e=>{
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const text = `الاسم: ${f.get('name')}\nالهاتف: ${f.get('phone')}\nالنوع: ${f.get('type')}\n\n${f.get('msg')}`;
+  window.open('https://wa.me/962791819000?text='+encodeURIComponent(text),'_blank');
+  const t=document.getElementById('toast'); t.textContent='شكراً لتواصلك! سيتم تحويلك إلى واتساب'; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000); e.target.reset();
+});
+
+/* ===== عدّاد الأرقام + ظهور العناصر ===== */
+const io = new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting) return;
+  en.target.classList.add('in');
+  en.target.querySelectorAll('[data-count]').forEach(n=>{
+    const end=+n.dataset.count, plus=n.hasAttribute('data-plus'); let s=null;
+    const step=t=>{ if(!s)s=t; const p=Math.min((t-s)/1400,1);
+      n.textContent=Math.floor(end*(1-Math.pow(1-p,3))).toLocaleString('en')+(plus&&p===1?'+':'');
+      if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+  io.unobserve(en.target);
+}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
+
+/* ===== الهيدر والقائمة ===== */
+const hdr=document.getElementById('hdr'), menu=document.getElementById('menu');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+document.getElementById('burger').onclick=()=>menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
