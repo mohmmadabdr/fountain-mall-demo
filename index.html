@@ -7,7 +7,7 @@
 <meta name="description" content="النافورة مول - مجمع النافورة التجاري والترفيهي في العقبة. تسوّق، مطاعم، بنوك، ترفيه للعائلة.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --sea:#0b3b4f; --sea-2:#0f566f; --sea-3:#1b7a93;
@@ -21,7 +21,7 @@ body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-h1,h2,h3{font-family:"Reem Kufi",sans-serif;line-height:1.35}
+h1,h2,h3{font-family:"Cairo",sans-serif;font-weight:800;line-height:1.4;letter-spacing:0}
 .eyebrow{display:inline-block;color:var(--sea-3);font-weight:600;font-size:.9rem;letter-spacing:.5px;margin-bottom:8px}
 .eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:var(--sand);vertical-align:middle;margin-left:10px}
 section{padding:90px 0}
@@ -73,7 +73,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(0,0,0,.04)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .stat{padding:30px 20px;text-align:center;border-left:1px solid var(--line)}
 .stat:last-child{border-left:0}
-.stat b{display:block;font-family:"Reem Kufi";font-size:2.2rem;color:var(--sea)}
+.stat b{display:block;font-family:"Cairo";font-weight:800;font-size:2.2rem;color:var(--sea)}
 .stat span{color:var(--muted);font-size:.95rem}
 
 /* about */
@@ -178,7 +178,7 @@ form .full{grid-column:1/-1}
 /* footer */
 footer{background:#071f2a;color:rgba(255,255,255,.75);padding:60px 0 24px;margin-top:90px}
 .f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px}
-footer h4{color:#fff;font-family:"Reem Kufi";margin-bottom:14px;font-size:1.1rem}
+footer h4{color:#fff;font-family:"Cairo";font-weight:800;margin-bottom:14px;font-size:1.1rem}
 footer ul{list-style:none;display:grid;gap:8px}
 footer a:hover{color:var(--sand)}
 .f-logo{height:60px;width:auto;filter:brightness(0) invert(1);margin-bottom:14px}
@@ -200,8 +200,8 @@ footer a:hover{color:var(--sand)}
   .f-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
-  .menu{position:fixed;top:100px;right:0;left:0;background:var(--bg);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:.35s;z-index:-1}
-  .menu.open{transform:none}
+  .menu{position:absolute;top:100%;right:0;left:0;background:var(--bg);flex-direction:column;padding:20px 24px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(0,0,0,.06);display:none}
+  .menu.open{display:flex}
   .burger{display:block}
   .nav-cta .btn{display:none}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -216,6 +216,20 @@ footer a:hover{color:var(--sand)}
   section{padding:64px 0}
 }
 @media (max-width:560px){
+  .hero{min-height:auto}
+  .hero .wrap{padding:70px 0 110px}
+  .hero h1{font-size:2.1rem}
+  .hero p{font-size:1rem}
+  .hero-actions .btn{flex:1;justify-content:center}
+  .stats{margin-top:-40px}
+  .stat{padding:20px 10px}
+  .stat b{font-size:1.6rem}
+  .stat span{font-size:.82rem}
+  .form-sec h2{font-size:1.5rem}
+  .gal{grid-auto-rows:120px}
+  .visit-card{padding:22px}
+  .map,.map iframe{min-height:300px}
+  .fab{width:52px;height:52px;bottom:16px;left:16px}
   .dir-grid{grid-template-columns:repeat(2,1fr)}
   .cat-grid,.svc-grid,.f-grid{grid-template-columns:1fr}
   .checks{grid-template-columns:1fr}
